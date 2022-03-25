@@ -19,7 +19,7 @@ const dbInfo = {
   host: 'localhost',
   port: 3306,
   username: 'root',
-  password: '123456789',
+  password: '123456',
 };
 if (ENV === 'prod') {
   dbInfo.host = '10.0.224.4';

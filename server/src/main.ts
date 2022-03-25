@@ -8,11 +8,7 @@ const ENV = process.env.NODE_ENV;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors({
-    origin: true,
-    credentials: true,
-    maxAge: 1728000,
-  });
+  app.enableCors();
 
   app.useLogger(app.get(Log4jsLogger));
 
@@ -26,6 +22,7 @@ async function bootstrap() {
     SwaggerModule.setup('api', app, document);
   }
 
-  await app.listen(3000);
+  await app.listen(3050);
+  console.log(`app started at ${app.getUrl()}`);
 }
 bootstrap();
