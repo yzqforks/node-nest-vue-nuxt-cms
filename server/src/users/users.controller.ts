@@ -32,6 +32,8 @@ export class UsersController {
   @Get('profile')
   @ApiOperation({ summary: '用户信息' })
   getProfile(@Request() req) {
+    console.log('这是req');
+    console.log(req.user);
     return req.user;
   }
 

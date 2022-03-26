@@ -13,7 +13,7 @@ import { AuthModule } from './auth/auth.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { Log4jsModule } from './libs/log4js/';
-
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 const ENV = process.env.NODE_ENV;
 const dbInfo = {
   host: 'localhost',
@@ -41,6 +41,7 @@ const { host, port, username, password } = dbInfo;
       entities: [],
       autoLoadEntities: true,
       synchronize: true,
+      namingStrategy: new SnakeNamingStrategy(),
     }),
     UsersModule,
     ProductsModule,

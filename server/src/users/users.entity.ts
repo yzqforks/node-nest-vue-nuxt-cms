@@ -36,4 +36,9 @@ export class User {
 
   @Column()
   updatedAt: Date;
+  department: any;
+  phone: any;
+  departmentName: any;
+  departmentId: any;
+  areaId: any;
 }

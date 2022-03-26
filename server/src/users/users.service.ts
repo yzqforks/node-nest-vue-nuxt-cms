@@ -108,7 +108,7 @@ export class UsersService {
   }
 
   // 根据用户名查找
-  async findOneByName(username: string): Promise<any> {
+  async findOneByName(username: string): Promise<User> {
     return this.usersRepository.findOne({
       name: username,
     });

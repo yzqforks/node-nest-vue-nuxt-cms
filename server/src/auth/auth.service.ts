@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { cryptoString } from '../libs/lib';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
+import { LoginUserDto } from './dto/login-user.dto';
 
 @Injectable()
 export class AuthService {
@@ -28,19 +29,20 @@ export class AuthService {
   }
 
   // 登录
-  async login(user: any) {
+  async login(user: LoginUserDto) {
     console.log('login  xxxxxx', user);
+    let sqlUser = await this.usersService.findOneByName(user.username);
     const payload = {
-      username: user.name,
-      userId: user['id'],
-      roles: user.roles,
-      status: user.status,
-      department: user.department,
-      phone: user.phone,
-      avatar: user.avatar,
-      departmentName: user.departmentName,
-      departmentId: user.departmentId,
-      areaId: user.areaId,
+      username: sqlUser.name,
+      userId: sqlUser['id'],
+      roles: sqlUser.roles,
+      status: sqlUser.status,
+      department: sqlUser.department,
+      phone: sqlUser.phone,
+      avatar: sqlUser.avatar,
+      departmentName: sqlUser.departmentName,
+      departmentId: sqlUser.departmentId,
+      areaId: sqlUser.areaId,
     };
     return {
       access_token: this.jwtService.sign(payload),
