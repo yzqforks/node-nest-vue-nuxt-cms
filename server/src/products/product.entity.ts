@@ -17,10 +17,10 @@ export class Product {
   @Column()
   category: string;
 
-  @Column('mediumtext', { nullable: true })
+  @Column('text', { nullable: true })
   intro: string;
 
-  @Column('mediumtext')
+  @Column('text')
   content: string;
 
   @Column({
@@ -33,9 +33,10 @@ export class Product {
 
   @Column({
     select: false,
+    nullable: true,
   })
   createdAt: Date;
 
-  @Column()
+  @Column({ nullable: true })
   updatedAt: Date;
 }

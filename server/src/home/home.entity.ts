@@ -11,7 +11,7 @@ export class Home {
   @Column()
   pic: string;
 
-  @Column('mediumtext', { nullable: true })
+  @Column('text', { nullable: true })
   intro: string;
 
   @Column()
@@ -19,9 +19,10 @@ export class Home {
 
   @Column({
     select: false,
+    nullable: true,
   })
   createdAt: Date;
 
-  @Column()
+  @Column({ nullable: true })
   updatedAt: Date;
 }

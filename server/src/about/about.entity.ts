@@ -20,7 +20,7 @@ export class About {
   @Column()
   banner: string;
 
-  @Column('mediumtext', { nullable: true })
+  @Column('text', { nullable: true })
   content: string;
 
   @Column()
@@ -28,9 +28,10 @@ export class About {
 
   @Column({
     select: false,
+    nullable: true,
   })
   createdAt: Date;
 
-  @Column()
+  @Column({ nullable: true })
   updatedAt: Date;
 }

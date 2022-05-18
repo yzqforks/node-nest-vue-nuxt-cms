@@ -17,8 +17,8 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 const ENV = process.env.NODE_ENV;
 const dbInfo = {
   host: 'localhost',
-  port: 3306,
-  username: 'root',
+  port: 5432,
+  username: 'postgres',
   password: '123456',
 };
 if (ENV === 'prod') {
@@ -32,7 +32,7 @@ const { host, port, username, password } = dbInfo;
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host,
       port,
       username,

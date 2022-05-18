@@ -5,7 +5,7 @@ export class User {
   @PrimaryGeneratedColumn('increment')
   id: string;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
   @Column()
@@ -21,7 +21,7 @@ export class User {
   })
   roles: string[];
 
-  @Column('mediumtext', {
+  @Column('text', {
     nullable: true,
   })
   intro: string;
@@ -30,11 +30,12 @@ export class User {
   status: boolean;
 
   @Column({
-    select: false,
+    nullable: true,
+    // select: false,
   })
   createdAt: Date;
 
-  @Column()
+  @Column({ nullable: true })
   updatedAt: Date;
   department: any;
   phone: any;

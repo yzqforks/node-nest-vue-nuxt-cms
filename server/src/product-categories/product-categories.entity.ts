@@ -11,7 +11,7 @@ export class ProductCategories {
   @Column({ nullable: true })
   route: string;
 
-  @Column('mediumtext', { nullable: true })
+  @Column('text', { nullable: true })
   description: string;
 
   @Column()
@@ -19,9 +19,10 @@ export class ProductCategories {
 
   @Column({
     select: false,
+    nullable: true,
   })
   createdAt: Date;
 
-  @Column()
+  @Column({ nullable: true })
   updatedAt: Date;
 }

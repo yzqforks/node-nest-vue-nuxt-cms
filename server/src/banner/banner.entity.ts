@@ -14,7 +14,7 @@ export class Banner {
   @Column()
   pic: string;
 
-  @Column('mediumtext', { nullable: true })
+  @Column('text', { nullable: true })
   intro: string;
 
   @Column()
@@ -22,9 +22,10 @@ export class Banner {
 
   @Column({
     select: false,
+    nullable: true,
   })
   createdAt: Date;
 
-  @Column()
+  @Column({ nullable: true })
   updatedAt: Date;
 }
