@@ -20,7 +20,7 @@ export class AuthService {
     const user = JSON.parse(JSON.stringify(data || {}));
 
     password = cryptoString(password);
-
+    console.log('加密后密码', password);
     if (user && user.password === password) {
       const { password, ...result } = user;
       return result;

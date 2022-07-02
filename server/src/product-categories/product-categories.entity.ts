@@ -5,7 +5,7 @@ export class ProductCategories {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
   @Column({ nullable: true })
@@ -14,7 +14,7 @@ export class ProductCategories {
   @Column('text', { nullable: true })
   description: string;
 
-  @Column()
+  @Column({ nullable: true })
   status: boolean;
 
   @Column({

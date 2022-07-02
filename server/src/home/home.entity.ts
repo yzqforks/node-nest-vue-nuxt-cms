@@ -5,16 +5,16 @@ export class Home {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   pic: string;
 
   @Column('text', { nullable: true })
   intro: string;
 
-  @Column()
+  @Column({ nullable: true })
   status: boolean;
 
   @Column({

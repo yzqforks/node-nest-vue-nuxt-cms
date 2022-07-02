@@ -7,8 +7,6 @@ import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import Element from 'element-ui'
 import './styles/element-variables.scss'
 
-import CKEditor from '@ckeditor/ckeditor5-vue'
-
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -27,11 +25,8 @@ Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value),
 })
 
-// @see https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/vuejs.html#using-component-locally
-Vue.use(CKEditor)
-
 // register global utility filters
-Object.keys(filters).forEach(key => {
+Object.keys(filters).forEach((key) => {
   Vue.filter(key, filters[key])
 })
 
@@ -42,5 +37,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: h => h(App),
+  render: (h) => h(App),
 })

@@ -110,13 +110,13 @@ export class UsersService {
   // 根据用户名查找
   async findOneByName(username: string): Promise<User> {
     return this.usersRepository.findOne({
-      name: username,
+     where:{ name: username,}
     });
   }
 
   // 根据ID查找
   async findOneById(id: string): Promise<any> {
-    return this.usersRepository.findOne(id);
+    return this.usersRepository.findOne({ where: { id } });
   }
 
   // 更新密码

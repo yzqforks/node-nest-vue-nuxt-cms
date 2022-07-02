@@ -26,7 +26,7 @@ export class User {
   })
   intro: string;
 
-  @Column()
+  @Column({ nullable: true })
   status: boolean;
 
   @Column({

@@ -5,16 +5,16 @@ export class Product {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
   @Column({ nullable: true })
   route: string;
 
-  @Column()
+  @Column({ nullable: true })
   pic: string;
 
-  @Column()
+  @Column({ nullable: true })
   category: string;
 
   @Column('text', { nullable: true })
@@ -28,7 +28,7 @@ export class Product {
   })
   recommend: boolean;
 
-  @Column()
+  @Column({ nullable: true })
   status: boolean;
 
   @Column({

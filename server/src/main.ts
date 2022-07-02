@@ -19,10 +19,10 @@ async function bootstrap() {
       .setVersion('1.0')
       .build();
     const document = SwaggerModule.createDocument(app, options);
-    SwaggerModule.setup('api', app, document);
+    SwaggerModule.setup('api-docs', app, document);
   }
 
   await app.listen(3050);
-  console.log(`app started at ${app.getUrl()}`);
+  console.log(`app started at ${await app.getUrl()}`);
 }
 bootstrap();

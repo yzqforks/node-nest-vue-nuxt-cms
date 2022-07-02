@@ -5,25 +5,25 @@ export class About {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   route: string;
 
-  @Column()
+  @Column({ nullable: true })
   description: string;
 
-  @Column()
+  @Column({ nullable: true })
   category: string;
 
-  @Column()
+  @Column({ nullable: true })
   banner: string;
 
   @Column('text', { nullable: true })
   content: string;
 
-  @Column()
+  @Column({ nullable: true })
   status: boolean;
 
   @Column({

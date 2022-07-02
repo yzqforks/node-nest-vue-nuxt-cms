@@ -5,19 +5,19 @@ export class Banner {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   url: string;
 
-  @Column()
+  @Column({ nullable: true })
   pic: string;
 
   @Column('text', { nullable: true })
   intro: string;
 
-  @Column()
+  @Column({ nullable: true })
   status: boolean;
 
   @Column({

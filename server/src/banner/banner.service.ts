@@ -83,8 +83,8 @@ export class BannerService {
   }
 
   // 根据ID查找
-  async findOneById(id: string): Promise<any> {
-    return this.bannerRepository.findOne(id);
+  async findOneById(id: any): Promise<any> {
+    return this.bannerRepository.findOne({ where: { id: id } });
   }
 
   // 数量

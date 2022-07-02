@@ -83,8 +83,8 @@ export class HomeService {
   }
 
   // 根据ID查找
-  async findOneById(id: string): Promise<any> {
-    return this.homeRepository.findOne(id);
+  async findOneById(id: any): Promise<any> {
+    return this.homeRepository.findOne({ where: { id: id } });
   }
 
   // 数量
