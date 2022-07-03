@@ -1,12 +1,11 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+
 import Cookies from 'js-cookie'
-import elementEnLocale from 'element-ui/lib/locale/lang/en' // element-ui lang
-import elementZhLocale from 'element-ui/lib/locale/lang/zh-CN' // element-ui lang
+import elementEnLocale from 'element-plus/lib/locale/lang/en' // element-plus lang
+import elementZhLocale from 'element-plus/lib/locale/lang/zh-CN' // element-plus lang
 import enLocale from './en'
 import zhLocale from './zh'
+import {createI18n} from "vue-i18n";
 
-Vue.use(VueI18n)
 
 const messages = {
   en: {
@@ -35,7 +34,7 @@ export function getLanguage() {
   }
   return 'zh'
 }
-const i18n = new VueI18n({
+const i18n =createI18n({
   // set locale
   // options: en | zh | es
   locale: getLanguage(),

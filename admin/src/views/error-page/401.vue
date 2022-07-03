@@ -31,8 +31,7 @@
   </div>
 </template>
 
-<script>
-import errGif from "@/assets/401_images/401.gif";
+<script  >
 
 export default {
   name: "Page401",

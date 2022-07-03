@@ -32,15 +32,15 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Page404",
-  computed: {
-    message() {
-      return "找不到页面了";
-    }
-  }
-};
+<script  setup>
+import {computed} from "vue";
+
+let message=computed(() => {
+  return '找不到页面了'
+})
+
+
+
 </script>
 
 <style lang="scss" scoped>

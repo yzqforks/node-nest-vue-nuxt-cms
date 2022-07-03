@@ -445,10 +445,10 @@ export function listToObject(list) {
 }
 
 // api 地址
-export const baseApi = process.env.VUE_APP_BASE_API
+export const baseApi = import.meta.env.VUE_APP_BASE_API
 
 // 服务端 host 地址
-export const baseHost = process.env.VUE_APP_BASE_HOST
+export const baseHost = import.meta.env.VUE_APP_BASE_HOST
 
 // 权限角色匹配
 export function roleName(name) {

@@ -101,7 +101,7 @@
 <script>
 import { validUsername } from '@/utils/validate'
 // import LangSelect from '@/components/LangSelect'
-import SocialSign from './components/SocialSignin'
+import SocialSign from './components/SocialSignin.vue'
 // import errGif from '@/assets/401_images/401.gif'
 
 export default {

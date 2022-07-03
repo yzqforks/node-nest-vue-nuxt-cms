@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import ScrollPane from './ScrollPane'
+import ScrollPane from './ScrollPane.vue'
 import { generateTitle } from '@/utils/i18n'
 import path from 'path'
 

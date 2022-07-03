@@ -21,7 +21,7 @@
       <div class="filter-container__ctrl">
         <el-button
           class="filter-item"
-          style="margin-left: 10px;"
+          style="margin-left: 10px"
           type="primary"
           plain
           icon="el-icon-edit"
@@ -186,7 +186,7 @@ export default {
     // 列表
     getList() {
       this.listLoading = true
-      fetchList(this.listQuery).then(res => {
+      fetchList(this.listQuery).then((res) => {
         this.list = res.data
         this.total = res.total
 
@@ -211,7 +211,7 @@ export default {
     handleDelete(row) {
       let ids = []
       if (Array.isArray(row)) {
-        ids = row.map(v => v._id)
+        ids = row.map((v) => v._id)
       } else {
         ids.push(row._id)
       }
@@ -219,7 +219,7 @@ export default {
       this.handleClose(() => {
         remove({
           ids,
-        }).then(res => {
+        }).then((res) => {
           this.$notify({
             title: '成功',
             message: '删除成功',
@@ -238,10 +238,10 @@ export default {
     // 删除提醒
     handleClose(done) {
       this.$confirm('确认删除？')
-        .then(_ => {
+        .then((_) => {
           done()
         })
-        .catch(_ => {})
+        .catch((_) => {})
     },
 
     // filter

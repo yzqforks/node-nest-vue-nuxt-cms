@@ -1,6 +1,6 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import router, { resetRouter } from '@/router'
+import router  from '@/router'
 import request from '@/utils/request'
 
 const state = {
@@ -87,7 +87,7 @@ const actions = {
           commit('SET_TOKEN', '')
           commit('SET_ROLES', [])
           removeToken()
-          resetRouter()
+
 
           // reset visited views and cached views
           // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2485

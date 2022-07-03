@@ -3,16 +3,16 @@
 
  Source Server         : localpg
  Source Server Type    : PostgreSQL
- Source Server Version : 140002
+ Source Server Version : 140003
  Source Host           : localhost:5432
  Source Catalog        : nest_cms_api
  Source Schema         : public
 
  Target Server Type    : PostgreSQL
- Target Server Version : 140002
+ Target Server Version : 140003
  File Encoding         : 65001
 
- Date: 18/05/2022 09:15:54
+ Date: 03/07/2022 04:02:16
 */
 
 
@@ -25,8 +25,8 @@ CREATE TABLE "public"."about" (
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "content" text COLLATE "pg_catalog"."default",
   "status" int2 NOT NULL,
-  "createdAt" timestamp(6) NOT NULL,
-  "updatedAt" timestamp(6) NOT NULL,
+  "created_at" timestamp(6) NOT NULL,
+  "updated_at" timestamp(6) NOT NULL,
   "banner" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "route" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "description" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
@@ -50,8 +50,8 @@ CREATE TABLE "public"."banner" (
   "pic" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "intro" text COLLATE "pg_catalog"."default",
   "status" int2 NOT NULL,
-  "createdAt" timestamp(6) NOT NULL,
-  "updatedAt" timestamp(6) NOT NULL,
+  "created_at" timestamp(6) NOT NULL,
+  "updated_at" timestamp(6) NOT NULL,
   "url" varchar(255) COLLATE "pg_catalog"."default" NOT NULL
 )
 ;
@@ -71,8 +71,8 @@ CREATE TABLE "public"."home" (
   "pic" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "intro" text COLLATE "pg_catalog"."default",
   "status" int2 NOT NULL,
-  "createdAt" timestamp(6) NOT NULL,
-  "updatedAt" timestamp(6) NOT NULL,
+  "created_at" timestamp(6) NOT NULL,
+  "updated_at" timestamp(6) NOT NULL,
   "id" int4 NOT NULL
 )
 ;
@@ -91,8 +91,8 @@ DROP TABLE IF EXISTS "public"."product-categories";
 CREATE TABLE "public"."product-categories" (
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "status" int2 NOT NULL,
-  "createdAt" timestamp(6) NOT NULL,
-  "updatedAt" timestamp(6) NOT NULL,
+  "created_at" timestamp(6) NOT NULL,
+  "updated_at" timestamp(6) NOT NULL,
   "route" varchar(255) COLLATE "pg_catalog"."default",
   "description" text COLLATE "pg_catalog"."default",
   "id" int4 NOT NULL
@@ -125,8 +125,8 @@ CREATE TABLE "public"."products" (
   "intro" text COLLATE "pg_catalog"."default",
   "content" text COLLATE "pg_catalog"."default" NOT NULL,
   "status" int2 NOT NULL,
-  "createdAt" timestamp(6) NOT NULL,
-  "updatedAt" timestamp(6) NOT NULL,
+  "created_at" timestamp(6) NOT NULL,
+  "updated_at" timestamp(6) NOT NULL,
   "route" varchar(255) COLLATE "pg_catalog"."default",
   "category" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "recommend" int2 NOT NULL
@@ -156,8 +156,8 @@ CREATE TABLE "public"."user" (
   "roles" text COLLATE "pg_catalog"."default",
   "intro" text COLLATE "pg_catalog"."default",
   "status" int2 NOT NULL,
-  "createdAt" timestamp(6),
-  "updatedAt" timestamp(6)
+  "created_at" timestamp(6),
+  "updated_at" timestamp(6)
 )
 ;
 

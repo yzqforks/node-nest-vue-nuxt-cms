@@ -1,10 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
 
-Vue.use(Router)
+
+
 
 /* Layout */
-import Layout from '@/layout'
+import Layout from '@/layout/index.vue'
 
 /* Router Modules */
 // import componentsRouter from './modules/components'
@@ -14,6 +13,8 @@ import aboutRouter from './modules/about'
 import userRouter from './modules/user'
 import productRouter from './modules/product'
 import homeRouter from './modules/home'
+import Page404 from "@/views/error-page/Page404.vue";
+import {createRouter, createWebHashHistory} from "vue-router";
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -49,28 +50,28 @@ export const constantRoutes = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index'),
+        component: () => import('@/views/redirect/index.vue'),
       },
     ],
   },
   {
     path: '/login',
-    component: () => import('@/views/login/index'),
+    component: () => import('@/views/login/index.vue'),
     hidden: true,
   },
   {
     path: '/auth-redirect',
-    component: () => import('@/views/login/auth-redirect'),
+    component: () => import('@/views/login/auth-redirect.vue'),
     hidden: true,
   },
   {
     path: '/404',
-    component: () => import('@/views/error-page/404'),
+    component: () => import('@/views/error-page/Page404.vue'),
     hidden: true,
   },
   {
     path: '/401',
-    component: () => import('@/views/error-page/401'),
+    component: () => import('@/views/error-page/401.vue'),
     hidden: true,
   },
   {
@@ -108,13 +109,13 @@ export const asyncRoutes = [
     children: [
       {
         path: '401',
-        component: () => import('@/views/error-page/401'),
+        component: () => import('@/views/error-page/401.vue'),
         name: 'Page401',
         meta: { title: 'page401', noCache: true },
       },
       {
         path: '404',
-        component: () => import('@/views/error-page/404'),
+        component:  Page404,
         name: 'Page404',
         meta: { title: 'page404', noCache: true },
       },
@@ -122,19 +123,11 @@ export const asyncRoutes = [
   },
 ]
 
-const createRouter = () =>
-  new Router({
-    // mode: 'history', // require service support
-    scrollBehavior: () => ({ y: 0 }),
-    routes: constantRoutes,
-  })
 
-const router = createRouter()
 
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
-export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
-}
+const router = createRouter({
+  history:createWebHashHistory()
+  ,routes:constantRoutes
+})
 
-export default router
+ export default router

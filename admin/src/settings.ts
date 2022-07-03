@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: 'GiiBee CMS 管理系统',
 
   /**
